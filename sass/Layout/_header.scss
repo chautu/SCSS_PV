@@ -1,0 +1,73 @@
+.header {
+    @media (min-resolution: 192dpi) and (max-width: 900px){
+        background-image:
+        linear-gradient(to right bottom, rgba($colorPrimaryLight, .8), rgba($colorPrimaryDark, .8)),
+        url('../../img/background1.jpg');
+    }
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,rgba($colorPrimaryLight,.8),rgba($colorPrimaryDark,.8)), url(../img/background1.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    -webkit-clip-path:  ellipse(60% 60% at 50% 33%);
+    clip-path: ellipse(60% 60% at 50% 33%);
+
+    @include respond(phone){
+        clip-path: ellipse(60% 50% at 50% 20%);
+        height: 450px;
+    }
+
+    &__text-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        @include respond(phone){
+            top: 40%;
+        }
+    }
+
+    &__logo{
+        height: 70px;
+    }
+
+    &__logo-box{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: calc(100% - 60px);
+        @include respond(phone){
+            left: 0px;
+            top:15px;
+        }
+    }
+
+    &__menuPc{
+        min-width: 100%;
+
+        &--menu{
+            display: flex;
+            min-width: 100%;
+            @include respond(tab-land){
+                display: none;
+            }
+        }
+
+        &--menu__list{
+            display: flex;
+            list-style: none;
+        }
+    }
+
+
+}
+
+.menuPc{
+    @include respond(tab-land){
+        display: none;
+    } 
+    
+}
+
